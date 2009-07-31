@@ -7,3 +7,12 @@
 	<use name=f77compiler>
 	<lib name=GeneratorInterfaceBCVEGPY>
 </bin>
+<library file="HARDCOL/*.f" name=GeneratorInterfaceHARDCOL>
+   <use name=pythia6>
+   <use name=f77compiler>
+</library> 
+<bin file="HARDCOL/main.cc" name=HardcolGenerator>
+	<use name=pythia6>
+	<use name=f77compiler>
+	<lib name=GeneratorInterfaceHARDCOL>
+</bin>
