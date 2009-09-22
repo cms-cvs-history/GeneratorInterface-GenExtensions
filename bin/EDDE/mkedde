@@ -1,4 +1,0 @@
-rm -f edde
-g77 -O2 -fno-automatic -finit-local-zero  -w -g -fdebug-kludge -o edde edde.f ./mylib.a \
-`cernlib jetset74 pdflib804 packlib mathlib kernlib`
-chmod +x edde
