@@ -1,0 +1,30 @@
+To generate events using the HardcolGenerator, you can proceed in the following way.
+
+Setup your environment:
+
+> eval `scramv1 runtime -csh` (or eval `scramv1 runtime -sh` for a sh variant shell)
+
+Add the package to your CMSSW project area:
+
+> addpkg GeneratorInterface/GenExtensions
+
+In GeneratorInterface/GenExtensions there is the usual subdirectory structure:
+
+    * bin: contains the BuildFile and the subdirectory HARDCOL
+          o HARDCOL: contains the code sources: main.cc, all the fortran files and the include files needed to run the generator. 
+    * data: contains the .dat distribution files, dJYs05rc1.dat, dJYs1rc1.dat and dJYs2rc1.dat.
+    * test: contains bcvegpy_par_set.nam, the namelist with the generator parameters which can be set by the user, and HardcolLHE_cfg.py, the configuration file to processed the HardcolGenerator output using the LHEInterface package. 
+
+Build the package typing:
+
+> scramv1 b 
+
+In the test directory, set the parameters (see below) and run the generator.
+
+> cd test 
+
+> HardcolGenerator 
+
+This will produce a HARDCOL.lhe file to be processed by the Pythia6HadronizerFilter for the hadronization. 
+
+It is recommended to submit separate productions of not more than 250000 events. For each production sample, a separate directory has to be created in order to avoid file overwriting (a set of files .grid and a mix.cs file are produced for internal use of the generator). The corresponding namelist has to be copied in each single directory. The directory will contain the corresponding output LHE file. 
