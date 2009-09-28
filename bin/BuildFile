@@ -18,12 +18,12 @@
 	<lib name=GeneratorInterfaceHARDCOL>
 </bin>
 
-#<library file="EDDE/edde.f" name=GeneratorInterfaceEDDE>
-#   <use name=pythia6>
-#   <use name=f77compiler>
-#</library>
-#<bin file="EDDE/main.cc" name=EDDEGenerator>
-#        <use name=pythia6>
-#        <use name=f77compiler>
-#        <lib name=GeneratorInterfaceEDDE>
-#</bin>
+<library file="EDDE/edde.f" name=GeneratorInterfaceEDDE>
+   <use name=pythia6>
+   <use name=f77compiler>
+</library>
+<bin file="EDDE/main.cc" name=EDDEGenerator>
+        <use name=pythia6>
+        <use name=f77compiler>
+        <lib name=GeneratorInterfaceEDDE>
+</bin>
