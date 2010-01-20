@@ -8,15 +8,21 @@
 	<lib name=GeneratorInterfaceBCVEGPY>
 </bin>
 
-<library file="HARDCOL/*.f" name=GeneratorInterfaceHARDCOL>
-   <use name=pythia6>
-   <use name=f77compiler>
-</library> 
-<bin file="HARDCOL/main.cc" name=HardcolGenerator>
-	<use name=pythia6>
-	<use name=f77compiler>
-	<lib name=GeneratorInterfaceHARDCOL>
-</bin>
+#
+# JVY: tmp disable HARDCOL, since the implementation 
+# as of Jan.20 1010 is incompatible with Pythia6.422
+# (the code builds and the exec runs, but the physics 
+# output is corrupted)
+#
+#<library file="HARDCOL/*.f" name=GeneratorInterfaceHARDCOL>
+#   <use name=pythia6>
+#   <use name=f77compiler>
+#</library> 
+#<bin file="HARDCOL/main.cc" name=HardcolGenerator>
+#	<use name=pythia6>
+#	<use name=f77compiler>
+#	<lib name=GeneratorInterfaceHARDCOL>
+#</bin>
 
 <library file="EDDE/edde.f" name=GeneratorInterfaceEDDE>
    <use name=pythia6>
