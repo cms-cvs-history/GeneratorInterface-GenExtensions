@@ -8,7 +8,7 @@
 	<lib name=GeneratorInterfaceBCVEGPY>
 </bin>
 
-#
+
 # JVY: tmp disable HARDCOL, since the implementation 
 # as of Jan.20 1010 is incompatible with Pythia6.422
 # (the code builds and the exec runs, but the physics 
@@ -24,12 +24,17 @@
 #	<lib name=GeneratorInterfaceHARDCOL>
 #</bin>
 
-<library file="EDDE/edde.f" name=GeneratorInterfaceEDDE>
-   <use name=pythia6>
-   <use name=f77compiler>
-</library>
-<bin file="EDDE/main.cc" name=EDDEGenerator>
-        <use name=pythia6>
-        <use name=f77compiler>
-        <lib name=GeneratorInterfaceEDDE>
-</bin>
+
+# JVY: temporarily disable EDDE, until compatibility 
+# with Pythia6.422 (or later) is confirmed and the code
+# is cleaned of unint variables
+#
+#<library file="EDDE/edde.f" name=GeneratorInterfaceEDDE>
+#   <use name=pythia6>
+#   <use name=f77compiler>
+#</library>
+#<bin file="EDDE/main.cc" name=EDDEGenerator>
+#        <use name=pythia6>
+#        <use name=f77compiler>
+#        <lib name=GeneratorInterfaceEDDE>
+#</bin>
